@@ -1,6 +1,5 @@
 import create, { State } from "zustand"
 import produce from "immer"
-import notifications from "utils/notifications";
 
 interface NotificationStore extends State {
   notifications: Array<{
