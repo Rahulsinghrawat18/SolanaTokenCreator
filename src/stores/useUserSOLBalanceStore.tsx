@@ -8,14 +8,16 @@ interface UserSOLBalanceStore extends State {
 
 const useUserSOLBalanceStore = create<UserSOLBalanceStore>((set, _get) => ({
   balance: 0,
-  getUserSOLBalance: async (publickey, Connection) => {
+  getUserSOLBalance: async (publickey, connection) => { 
     let balance = 0;
 
     try {
-      balance = await Connection.getBalance(publickey, "confirmed");
+      balance = await connection.getBalance(publickey, "confirmed");
       balance = balance / LAMPORTS_PER_SOL;
+      set({ balance });
     } catch (error) {
-      console.log("Balance:", balance);
+      console.error("Error fetching balance:", error);
+      set({ balance: 0 }); 
     }
   },
 }));

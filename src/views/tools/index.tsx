@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import { MdGeneratingTokens } from "react-icons/md";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { LuArrowRightFromLine } from "react-icons/lu";
+import { notify } from "utils/notifications";
+
 
 interface MyComponentProps {
   setOpenSendTransaction: React.Dispatch<React.SetStateAction<boolean>>;
@@ -47,17 +49,17 @@ export const ToolView: FC<MyComponentProps> = ({
     {
       name: "Buddy Token",
       icon: <MdGeneratingTokens />,
-      function: setOpenSendTransaction,
+      function: () => notify({ type: "info", message: "Coming Super Soon!" }),
     },
     {
       name: "Top Tokens",
       icon: <MdGeneratingTokens />,
-      function: setOpenSendTransaction,
+      function: () => notify({ type: "info", message: "Coming Super Soon!" }),
     },
     {
       name: "Solana Explorer",
       icon: <MdGeneratingTokens />,
-      function: setOpenSendTransaction,
+      function: () => notify({ type: "info", message: "Coming Super Soon!" }),
     },
   ];
   return (
@@ -81,10 +83,8 @@ export const ToolView: FC<MyComponentProps> = ({
               className="text-default-200 text-sm
           font-medium"
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi
-              dolorem perspiciatis, nesciunt, dolores fuga voluptas delectus
-              quae esse minus vitae repellendus, sed pariatur iste possimus!
-              Inventore numquam provident ut earum.
+            From creating tokens to exploring the network — everything you need is here. 
+            Use our tools to build, test, and launch with ease on Solana's blazing-fast blockchain.
             </p>
           </div>
         </div>

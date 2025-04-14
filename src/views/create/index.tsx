@@ -28,7 +28,7 @@ import { useNetworkConfiguration } from "contexts/NetworkConfigurationProvider";
 //UI
 import { AiOutlineClose } from "react-icons/ai";
 import CreateSVG from "../../components/SVG/CreateSVG";
-import { InputView } from "views";
+import { InputView } from "../index";
 import { Branding } from "../../components/Branding";
 // import { InputView } from "../index";
 
@@ -36,8 +36,8 @@ interface MyComponentProps {
   setOpenCreateModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const apiKey = process.env.REACT_APP_PINATA_API_KEY;
-const secretKey = process.env.REACT_APP_PINATA_SECRET_API_KEY;
+const apiKey = process.env.NEXT_PUBLIC_REACT_APP_PINATA_API_KEY;
+const secretKey = process.env.NEXT_PUBLIC_REACT_APP_PINATA_SECRET_API_KEY;
 
 
 export const CreateView: FC<MyComponentProps> = ({ setOpenCreateModal }) => {
@@ -486,6 +486,34 @@ export const CreateView: FC<MyComponentProps> = ({ setOpenCreateModal }) => {
                         <span className="fw-bold">View on Solana</span>
                       </a>
                     </div>
+
+                    <div>
+                    <div className="text-center">
+                      <ul
+                        className="flex flex-wrap items-center
+                      justify-center gap-2"
+                      >
+                        <li>
+                          <a
+                            onClick={() => setOpenCreateModal(false)}
+                            className="group inline-flex h-10
+                          w-10 items-center justify-center
+                          rounded-lg bg-white/20 backdrop-blur-2xl
+                          transition-all duration-500
+                          hover:bg-blue-600/60"
+                          >
+                            <i
+                              className="text-2xl text-white
+                            group-hover:text-white"
+                            >
+                              <AiOutlineClose />
+                            </i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
                   </div>
                 </div>
               </div>

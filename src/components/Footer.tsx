@@ -1,25 +1,20 @@
 import React, { FC } from "react";
 import { useForm } from "@formspree/react";
 import {
-  TiSocialFacebook,
   TiSocialLinkedin,
   TiSocialTwitter,
   TiSocialYoutube,
 } from "react-icons/ti";
+import { FaDiscord } from "react-icons/fa";
 
 const Footer: FC = () => {
-  const [state, handleSubmit] = useForm("mzbnzpqr");
+  const [state, handleSubmit] = useForm("mgvadgqw");
 
-  if (state.succeeded) {
-    return (
-      <h1
-        className="md:text-5xl/tight my-4 max-w-lg
-      text-4xl font-medium text-white"
-      >
-        Thanks for sending your message!!
-      </h1>
-    );
-  }
+  {state.succeeded && (
+    <p className="text-green-500 font-medium mb-4">
+      Thanks for sending your message!!
+    </p>
+  )}  
 
   const menuOne = [
     "Support Center",
@@ -58,8 +53,7 @@ const Footer: FC = () => {
                     <i
                       data-lucide="gauge-circle"
                       className="me-2 inline-block h-4 w-4"
-                    >
-                    </i>
+                    ></i>
                     {item}
                   </a>
                 </li>
@@ -87,8 +81,7 @@ const Footer: FC = () => {
                     <i
                       data-lucide="gauge-circle"
                       className="me-2 inline-block h-4 w-4"
-                    >
-                    </i>
+                    ></i>
                     {item}
                   </a>
                 </li>
@@ -106,6 +99,11 @@ const Footer: FC = () => {
                 >
                   Signup and receive the latest tips & news
                 </p>
+                {state.succeeded && (
+    <p className="text-green-500 font-medium mb-4">
+      Thanks for sending your message!!
+    </p>
+  )}
                 <form onSubmit={handleSubmit} className="mb-6 space-y-2">
                   <label
                     htmlFor="email"
@@ -142,47 +140,39 @@ const Footer: FC = () => {
                   <h6 className="mb-4 text-base text-white">Follow Us</h6>
                   <ul className="flex flex-wrap items-center gap-1">
                     {[
-                      <TiSocialFacebook key="fb" />,
-                      <TiSocialLinkedin key="li" />,
-                      <TiSocialTwitter key="tw" />,
-                      <TiSocialYoutube key="yt" />,
+                      {
+                        icon: <FaDiscord />,
+                        url: "https://discord.com/users/882154335927156778",
+                      },
+                      {
+                        icon: <TiSocialLinkedin />,
+                        url: "https://www.linkedin.com/in/rahul-singh-rawat-783a98243/",
+                      },
+                      {
+                        icon: <TiSocialTwitter />,
+                        url: "https://x.com/Rawat_ji_7788",
+                      },
+                      {
+                        icon: <TiSocialYoutube />,
+                        url: "https://www.youtube.com/@Rawatji_7788",
+                      },
                     ].map((social, index) => (
                       <li key={index}>
                         <a
-                          href="#"
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="hover:bg-primary group inline-flex
         h-10 w-10 items-center justify-center rounded-lg
         border border-white/10 transition-all duration-500"
                         >
                           <span className="text-default-300 text-xl group-hover:text-white">
-                            {social}
+                            {social.icon}
                           </span>
                         </a>
                       </li>
                     ))}
                   </ul>
-
-                  {/* <ul className="flex flex-wrap items-center gap-1">
-                  {[
-                    <TiSocialFacebook />,
-                  <TiSocialLinkedin />,
-                  <TiSocialTwitter />,
-                  <TiSocialYoutube />,
-                  ].map((social, index) => {
-                    <li key={index}>
-                      <a 
-                      href="#"
-                      className="hover:bg-primary group inline-flex
-                      h-10 w-10 items-center justify-center rounded-lg
-                      border border-white/10 transition-all duration-500">
-                        <i data-lucide="facebook" className="text-default-300
-                        group-hover:text-white">
-                          {social}
-                        </i>
-                      </a>
-                    </li>
-                  })}
-                </ul> */}
                 </div>
               </div>
             </div>
@@ -192,24 +182,28 @@ const Footer: FC = () => {
 
       {/* CopyRight */}
       <div className="border-t border-white/10 py-6">
-      <div className="md:text-start container flex h-full
+        <div
+          className="md:text-start container flex h-full
       flex-wrap items-center justify-center gap-4 text-center
-      md:justify-between lg:px-20">
-        <p className="text-default-400 text-base font-medium">
-          @ SolanaAI --
-          <a href="#">
-            Designed & Created{" "}
-            <i data-lucide="heart" className="inline h-4
-            w-4 fill-red-500 text-red-500"></i>
-            by Rahul with 💖         
-          </a>
-        </p>
-        <p className="text-default-400 text-base font-medium">
-          Terms Conditions & Policies
-        </p>
+      md:justify-between lg:px-20"
+        >
+          <p className="text-default-400 text-base font-medium">
+            @ SolanaAI --
+            <a href="#">
+              Designed & Created{" "}
+              <i
+                data-lucide="heart"
+                className="inline h-4
+            w-4 fill-red-500 text-red-500"
+              ></i>
+              by Rahul with 💖
+            </a>
+          </p>
+          <p className="text-default-400 text-base font-medium">
+            Terms Conditions & Policies @ 2025
+          </p>
+        </div>
       </div>
-      </div>
-
     </footer>
   );
 };

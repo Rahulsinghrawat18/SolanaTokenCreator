@@ -64,7 +64,7 @@ const Home: NextPage = (props) => {
           <CreateView setOpenCreateModal={setOpenCreateModal} />
         </div>
       )}
-      {/*
+      
       {openTokenMetaData && (
         <div
           className="new_loader relative h-full
@@ -73,6 +73,7 @@ const Home: NextPage = (props) => {
           <TokenMetadata setOpenTokenMetadata={setOpenTokenMetadata} />
         </div>
       )}
+      
       {openContact && (
         <div
           className="new_loader relative h-full
@@ -81,6 +82,7 @@ const Home: NextPage = (props) => {
           <ContactView setOpenContact={setOpenContact} />
         </div>
       )}
+      
       {openAirdrop && (
         <div
           className="new_loader relative h-full
@@ -89,6 +91,7 @@ const Home: NextPage = (props) => {
           <AirdropView setOpenAirdrop={setOpenAirdrop} />
         </div>
       )}
+      
       {openSendTransaction && (
         <div
           className="new_loader relative h-full
@@ -96,7 +99,7 @@ const Home: NextPage = (props) => {
         >
           <DonateView setOpenSendTransaction={setOpenSendTransaction} />
         </div>
-      )}  */} 
+      )}  
     </>
   );
 };

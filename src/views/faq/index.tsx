@@ -49,10 +49,9 @@ export const FaqView: FC = () => {
               Any Questions
             </h2>
             <p className="text-default-200 text-sm font-medium">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut
-              maiores veritatis quia temporibus illo molestias eligendi ipsum at
-              voluptates maxime. Quaerat laudantium repudiandae ab inventore
-              beatae necessitatibus enim magnam distinctio.
+            Curious about how Solana tokens work or how to get started? 
+            We&apos;ve compiled answers to some of the most common questions to help you understand staking, 
+            creating, and trading tokens within the Solana ecosystem.
             </p>
           </div>
         </div>
